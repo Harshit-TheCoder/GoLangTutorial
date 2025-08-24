@@ -81,7 +81,7 @@ func main() {
 		select {
 		case msg := <-ch:
 			fmt.Println("Received:", msg)
-		case <-time.After(1 * time.Second):
+		case <-time.After(1 * time.Second): //wait 1 second then send something to channel. if worker sends someting to channel within 1 second print above line else print this line
 			fmt.Println("Timeout waiting for worker")
 		}
 	}
